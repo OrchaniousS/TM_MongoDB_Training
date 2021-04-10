@@ -2,9 +2,7 @@
 
 1. [Mongo DB with Node & Express (Udemy) by Dan Kwon](https://www.udemy.com/course/mongo-db-with-node-express/)
 ### Topics
-* MongoDB
-* Mongoose ORM
-* CRUD
+* MongoDB, Mongoose ORM, CRUD
 
 Sylabus | Duration
 :--- | ---:
@@ -18,6 +16,11 @@ Sylabus | Duration
 8. Updating Data | 8min
 9. Removing Data | 7min
 10. Deployment | 12min
+#
+#
+2. [MongoDB Crash Course by Traversy Media](https://www.youtube.com/watch?v=-56x56UppqQ)
+### Topics
+* MongoDB, Mongoose, Homebrew, CRUD operations.
 
 Sylabus | Timestamp
 :--- | ---:
@@ -46,16 +49,7 @@ Exit | 29:03
  MongoDB Atlas | 30:15
 
 
-
-2. [MongoDB Crash Course by Traversy Media](https://www.youtube.com/watch?v=-56x56UppqQ)
-### Topics
-* MongoDB
-* Mongoose
-* Homebrew
-* CRUD
-
-
-## Technologies in this project:
+## Technologies used in this project:
 1. Node.js
 2. MongoDB
 3. Express
