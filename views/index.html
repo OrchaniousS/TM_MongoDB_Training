@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MongoDB training</title>
+	<link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+	<section>
+		<h3>
+			GET usage
+		</h3>
+		<code>/api/user/{username}</code><br>  
+    <pre>
+    <code>
+      {
+        "_id":607198023d0ffd014c7aba27
+        "hobbies":[0:"Wearing sunglasses",1:"Crying"]
+        "firstname":"Johnny"
+        "lastname":"Bravo"
+        "age":50
+      }
+    </code>
+    </pre>
+  </section>
+  <hr/>
+<section>
+  <h3>Examples</h3>
+      Go to <a href='/api/user/usertest/'><code>/api/user/usertest/</code></a>  user
+</section>
+
+  <hr/>
+  <section id="userForm">
+    <h3>Insert new user:</h3>
+<form id="newuser">
+<input type="text" name="firstname" placeholder="First Name"><br>  
+<input type="text" name="lastname" placeholder="Last Name"><br>  
+<input type="number" name="age" placeholder="Age"><br>  
+<input type="text" name="hobbies" placeholder="Hobbies"><br>  
+<button type="submit">Create new user</button>
+  </form>
+</section>
+</body>
+</html>
