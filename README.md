@@ -6,16 +6,16 @@
 
 Sylabus | Duration
 :--- | ---:
-1. Introduction | 5min
-2. Project Setup | 7min
-3. Profile Schema | 11min
-4. Seed Data | 10min
-5. Queries | 9min
-6. Specific Document Queries | 6min
-7. Creating Data | 10min
-8. Updating Data | 8min
-9. Removing Data | 7min
-10. Deployment | 12min
+Introduction | 5min
+Project Setup | 7min
+Profile Schema | 11min
+Seed Data | 10min
+Queries | 9min
+Specific Document Queries | 6min
+Creating Data | 10min
+Updating Data | 8min
+Removing Data | 7min
+Deployment | 12min
 #
 #
 2. [MongoDB Crash Course by Traversy Media](https://www.youtube.com/watch?v=-56x56UppqQ)

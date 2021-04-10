@@ -23,19 +23,21 @@ app.route("/").get(function(req, res) {
 //Routing for API
 apiRoutes(app);
 
-const johnnyBravo = new User({
-  firstname:'Johnny',
-  lastname:'Bravo',
-  age:50,
-  hobbies:['Wearing sunglasses','Crying']
-});
 
-const timmyA = new User({
-  firstname:'lorky',
-  lastname:'timmy',
-  age:12,
-  hobbies:['Swimming','Paddling']
-});
+// ~~ Test users to input once if the collection is empty ~~
+// const johnnyBravo = new User({
+//   firstname:'Johnny',
+//   lastname:'Bravo',
+//   age:50,
+//   hobbies:['Wearing sunglasses','Crying']
+// });
+
+// const timmyA = new User({
+//   firstname:'lorky',
+//   lastname:'timmy',
+//   age:12,
+//   hobbies:['Swimming','Paddling']
+// });
 
 // 1. Insert & Save
 

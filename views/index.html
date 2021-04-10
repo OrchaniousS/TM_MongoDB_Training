@@ -5,16 +5,46 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>MongoDB training</title>
-	<link rel="stylesheet" href="/public/style.css">
+	<link rel="stylesheet" href="/style.css">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			padding: 1rem;
+			background: #E0EAFC;
+			/* fallback for old browsers */
+			background: -webkit-linear-gradient(to bottom, #CFDEF3, #E0EAFC);
+			/* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to bottom, #CFDEF3, #E0EAFC);
+			/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+		}
+
+		#examplesAPI {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.flexed {
+			display: flex;
+			flex-direction: column;
+		}
+	</style>
+
 </head>
 
 <body>
 	<section>
-		<h3>
-			GET usage
-		</h3>
-		<code>/api/user/{username}</code><br>  
-    <pre>
+		<div class="flexed">
+			<h3>
+				GET usage
+			</h3>
+			<div>
+				<code>/api/user/{username}</code><br>  
+        <pre>
     <code>
       {
         "_id":607198023d0ffd014c7aba27
@@ -25,11 +55,42 @@
       }
     </code>
     </pre>
+     </div>
+     <div>
+		<code>/api/users</code><br>  
+        <pre>
+    <code>
+      {
+        "hobbies": ["Wearing sunglasses","Crying"],
+        "_id": "607198023d0ffd014c7aba27",
+        "firstname": "Johnny",
+        "lastname": "Bravo",
+        "age": 50,
+        "__v": 0
+      },
+      {
+        "hobbies": ["Swimming","Paddling"],
+        "_id": "607198023d0ffd014c7aba28",
+        "firstname": "lorky",
+        "lastname": "timmy",
+        "age": 12,
+        "__v": 0
+      }
+    </code>
+    </pre>
+     </div>
+
+    </div>
+
+
   </section>
   <hr/>
-<section>
+<section id="examplesAPI">
   <h3>Examples</h3>
-      Go to <a href='/api/user/usertest/'><code>/api/user/usertest/</code></a>  user
+  <div class="flexed">
+    <div>  Go to <a href='/api/user/usertest/'><code>/api/user/usertest/</code></a> for a user </div>
+    <div> Go to <a href='/api/users'><code>/api/users</code></a> for the all available userlist </div>
+  </div>
 </section>
 
   <hr/>
