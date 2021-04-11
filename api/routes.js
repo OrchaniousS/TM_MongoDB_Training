@@ -13,7 +13,8 @@ module.exports = function(app) {
     User.find({}).exec((err,data)=>{
       if(err) return res.json({error:"No users available"})
       else{
-        res.json(data.map(item=>item))
+        let mapData = data.map(item=>item)
+        res.json(mapData)
       }
     })
   })
@@ -24,6 +25,7 @@ module.exports = function(app) {
 
   .get(function(req, res){
    let username = req.params.username;
+   console.log(req.params)
 
    const {
      _id,
@@ -33,13 +35,7 @@ module.exports = function(app) {
      hobbies
    } = req.query;
 
-   User.aggregate([
-     {$match:{firstname:username}},
-     {$unwind:"$users"},
-     _id != undefined ? 
-     {$match:{"_id":ObjectId(_id)}}
-     :{$match:{}}
-   ]).exec((err,data)=>{
+   User.find({firstname:username}).exec((err,data)=>{
      if(err) return res.json({error:'No such user found'});
      else{
        let mapData = data.map(item=>item)
