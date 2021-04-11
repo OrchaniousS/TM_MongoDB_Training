@@ -83,5 +83,21 @@ module.exports = function(app) {
     })
   })
 
+  .delete(function(req,res){
+    let username = req.params.username;
+
+    if(!username) return res.send({error:'User missing'});
+
+    User.findOne({firstname:username},(err,userData)=>{
+      if(err || !userData){
+        res.send({error:"Could not delete user"})
+      } else{
+        userData.remove()
+        res.send({result:'User deleted.'})
+      }
+    })
+
+  })
+
   
 };

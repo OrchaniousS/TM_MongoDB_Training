@@ -41,6 +41,17 @@
       margin:1rem;
       padding:0.2rem;
     }
+
+    #userForm {
+      display:flex;
+      flex-direction:column;
+    }
+
+    form{
+      width:150px;
+      padding:0.2rem;
+      margin:0.1rem;
+    }
 	</style>
 
 </head>
@@ -103,17 +114,25 @@
 </section>
 
   <hr/>
-  <section id="userForm">
+<section id="userForm">
     <h3>POST usage</h2>
     <h3>Create new user:</h3>
+    <div>
 <form id="newuser" >
 <input type="text" name="firstname" placeholder="First Name"><br>  
 <input type="text" name="lastname" placeholder="Last Name"><br>  
 <input type="number" name="age" placeholder="Age"><br>  
 <input type="text" name="hobbies" placeholder="Hobbies"><br>  
 <button type="submit">Create new user</button>
-  </form>
-
+</form>
+</div>
+<div>
+<h3>Delete user:</h3>
+<form id="deleteuser" >
+<input type="text" name="firstname" placeholder="First Name"><br>  
+<button type="submit">Delete user</button>
+</form>
+</div>
 <code id="jsonResult">
 </code
 </section>
@@ -127,6 +146,18 @@
             url: '/api/user/usertest',
             type: 'post',
             data: $('#newuser').serialize(),
+            success: function(data) {
+              $('#jsonResult').text(JSON.stringify(data));
+            }
+          });
+          e.preventDefault();
+        });
+
+        $('#deleteuser').submit(function(e) {
+          $.ajax({
+            url: '/api/user/usertest',
+            type: 'delete',
+            data: $('#deleteuser').serialize(),
             success: function(data) {
               $('#jsonResult').text(JSON.stringify(data));
             }
