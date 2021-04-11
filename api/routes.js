@@ -8,6 +8,7 @@ const User = require('../models/user');
 module.exports = function(app) {
   app
   .route('/api/users')
+
   .get(function(req,res){
     User.find({}).exec((err,data)=>{
       if(err) return res.json({error:"No users available"})
@@ -20,18 +21,24 @@ module.exports = function(app) {
 
   app
   .route('/api/user/:username')
+
   .get(function(req, res){
-   let userName = req.params.username;
+   let username = req.params.username;
 
    const {
-     firstName,
-     lastName,
-     userAge,
-     userHobbies
+     _id,
+     firstname,
+     lastname,
+     age,
+     hobbies
    } = req.query;
 
    User.aggregate([
-     {$match:{firstname:userName}}
+     {$match:{firstname:username}},
+     {$unwind:"$users"},
+     _id != undefined ? 
+     {$match:{"_id":ObjectId(_id)}}
+     :{$match:{}}
    ]).exec((err,data)=>{
      if(err) return res.json({error:'No such user found'});
      else{
@@ -43,25 +50,25 @@ module.exports = function(app) {
 
 
   .post(function(req, res) {
-   let userName = req.params.username;
-   
+   let username = req.params.username;
+
    const {
-     firstName,
-     lastName,
-     userAge,
-     userHobbies
+     firstname,
+     lastname,
+     age,
+     hobbies
      } = req.body;
 
     //   to add required fields
 
     const newUser = new User({
-      firstname:firstName || "",
-      lastname:lastName || "",
-      age:userAge || "",
-      hobbies: userHobbies.split(' ') || [""],
+      firstname:firstname || "",
+      lastname:lastname || "",
+      age:age || "",
+      hobbies: hobbies.split(' ') || [""],
     })
 
-    User.findOne({firstname:userName},(err,dataUser)=>{
+    User.findOne({firstname:username},(err,dataUser)=>{
       if(!dataUser){
         newUser.save((err,data)=>{
           if(err || !data) return console.log('error saving user')

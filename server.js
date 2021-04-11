@@ -2,11 +2,14 @@ const mongoose = require('mongoose');
 const mongoDB = require('mongodb');
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require("body-parser");
 
 const apiRoutes = require("./api/routes.js");
 
 const app = express();
 app.use(cors({origin: '*'}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,

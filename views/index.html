@@ -96,13 +96,34 @@
   <hr/>
   <section id="userForm">
     <h3>Insert new user:</h3>
-<form id="newuser">
+<form id="newuser" >
 <input type="text" name="firstname" placeholder="First Name"><br>  
 <input type="text" name="lastname" placeholder="Last Name"><br>  
 <input type="number" name="age" placeholder="Age"><br>  
 <input type="text" name="hobbies" placeholder="Hobbies"><br>  
 <button type="submit">Create new user</button>
   </form>
+
+<code id="jsonResult">
+</code
 </section>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+<script>
+        $(function() {
+        $('#newuser').submit(function(e) {
+          $.ajax({
+            url: '/api/user/usertest',
+            type: 'post',
+            data: $('#newuser').serialize(),
+            success: function(data) {
+              $('#jsonResult').text(JSON.stringify(data));
+            }
+          });
+          e.preventDefault();
+        });
+        });
+</script>
 </body>
 </html>

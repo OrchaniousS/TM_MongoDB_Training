@@ -1,4 +1,4 @@
-# Mongo DB various resources for training
+# Mongo DB resources for training 📍 [Live](https://mongodb-tut.orchaniouss.repl.co/) 📍
 
 1. [Mongo DB with Node & Express (Udemy) by Dan Kwon](https://www.udemy.com/course/mongo-db-with-node-express/)
 ### Topics
